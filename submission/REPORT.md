@@ -4,7 +4,7 @@
 
 - Tên nhóm: nhóm Abe
 - Repository URL: https://github.com/tdattm/K4-DAY13-2A202601678.git
-- Commit nộp bài: commit chứa phiên bản báo cáo này; lấy SHA chính xác bằng `git rev-parse HEAD` sau commit cuối.
+- Commit nộp bài: `477d7b1`
 - Thành viên và vai trò:
   - Nguyễn Tiến Đạt (2A202601678) — Role A: API & Middleware
   - Lã Phan Hoài An (2A202601846) — Role B: Security Engineer / PII
