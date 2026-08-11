@@ -1,29 +1,73 @@
+schema_version: 1
 service: day13-observability-lab
+owner: sre-alerts-engineer
 window: 28d
+timezone: Asia/Bangkok
+data_source: data/logs.jsonl
 
+# The percentage target is evaluated over consecutive, non-overlapping windows.
+# A window without enough traffic is marked "no_data" and is not counted as good.
 slis:
   latency_p95_ms:
+    description: P95 end-to-end latency of successful chat responses.
+    event: response_sent
+    field: latency_ms
+    aggregation: p95
     objective: 3000
+    operator: lte
+    unit: ms
     target: 99.5
     evaluation_window: 5m
-    note: At least 99.5% of 5-minute windows must have P95 latency less than or equal to 3000 ms.
+    minimum_requests: 20
+    error_budget:
+      allowed_bad_window_percent: 0.5
+      allowed_bad_windows_per_28d: 40
+    note: At least 99.5% of eligible 5-minute windows must have P95 latency <= 3000 ms.
 
   error_rate_pct:
+    description: Percentage of received requests that end in request_failed.
+    numerator: 'count(event == "request_failed")'
+    denominator: 'count(event == "request_received")'
+    aggregation: ratio_percent
     objective: 2
+    operator: lte
+    unit: percent
     target: 99.0
     evaluation_window: 5m
-    note: At least 99.0% of 5-minute windows must have an error rate less than or equal to 2%.
+    minimum_requests: 20
+    error_budget:
+      allowed_bad_window_percent: 1.0
+      allowed_bad_windows_per_28d: 80
+    note: At least 99.0% of eligible 5-minute windows must have error rate <= 2%.
 
   daily_cost_usd:
+    description: Total cost of successful responses in one Bangkok calendar day.
+    event: response_sent
+    field: cost_usd
+    aggregation: sum
     objective: 2.5
+    operator: lte
+    unit: usd
     target: 100.0
     evaluation_window: 1d
-    note: Every evaluated day must have a total service cost less than or equal to 2.5 USD.
+    minimum_requests: 1
+    error_budget:
+      allowed_bad_day_percent: 0.0
+      allowed_bad_days_per_28d: 0
+    note: Every evaluated calendar day must have total service cost <= 2.5 USD.
 
   quality_score_avg:
+    description: Mean heuristic quality score of successful chat responses.
+    event: response_sent
+    field: quality_score
+    aggregation: mean
     objective: 0.75
+    operator: gte
+    unit: score_0_to_1
     target: 95.0
     evaluation_window: 5m
-    note: At least 95.0% of 5-minute windows must have an average quality score greater than or equal to 0.75.
-
-    
+    minimum_requests: 20
+    error_budget:
+      allowed_bad_window_percent: 5.0
+      allowed_bad_windows_per_28d: 403
+    note: At least 95.0% of eligible 5-minute windows must have average quality score >= 0.75.
