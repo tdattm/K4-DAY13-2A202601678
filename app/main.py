@@ -1,8 +1,10 @@
 from __future__ import annotations
 
 import os
+import time
 
 from fastapi import FastAPI, HTTPException, Request
+from fastapi.exceptions import RequestValidationError
 from fastapi.responses import JSONResponse
 from structlog.contextvars import bind_contextvars
 
@@ -20,6 +22,45 @@ log = get_logger()
 app = FastAPI(title="Day 13 Observability Lab")
 app.add_middleware(CorrelationIdMiddleware)
 agent = LabAgent()
+
+
+def _error_response_headers(request: Request) -> dict[str, str]:
+    """Preserve request observability headers when FastAPI handles an error."""
+    correlation_id = getattr(request.state, "correlation_id", None)
+    started_at = getattr(request.state, "request_started_at", None)
+    headers: dict[str, str] = {}
+    if correlation_id is not None:
+        headers["x-request-id"] = correlation_id
+    if started_at is not None:
+        headers["x-response-time-ms"] = f"{(time.perf_counter() - started_at) * 1000:.2f}"
+    return headers
+
+
+@app.exception_handler(RequestValidationError)
+async def request_validation_exception_handler(
+    request: Request, exc: RequestValidationError
+) -> JSONResponse:
+    record_error(type(exc).__name__)
+    log.warning(
+        "request_validation_failed",
+        service="api",
+        error_type=type(exc).__name__,
+    )
+    return JSONResponse(
+        status_code=422,
+        content={"detail": "Request validation failed"},
+        headers=_error_response_headers(request),
+    )
+
+
+@app.exception_handler(Exception)
+async def unhandled_exception_handler(request: Request, exc: Exception) -> JSONResponse:
+    """Return a stable response without exposing internal exception details."""
+    return JSONResponse(
+        status_code=500,
+        content={"detail": "Internal server error"},
+        headers=_error_response_headers(request),
+    )
 
 
 @app.on_event("startup")
@@ -85,9 +126,9 @@ async def chat(request: Request, body: ChatRequest) -> ChatResponse:
             "request_failed",
             service="api",
             error_type=error_type,
-            payload={"detail": str(exc), "message_preview": summarize_text(body.message)},
+            payload={"message_preview": summarize_text(body.message)},
         )
-        raise HTTPException(status_code=500, detail=error_type) from exc
+        raise HTTPException(status_code=500, detail="Internal server error") from exc
 
 
 @app.post("/incidents/{name}/enable")
