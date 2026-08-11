@@ -1,0 +1,23 @@
+{
+  "before": {
+    "production": 2
+  },
+  "after": {
+    "version": "1",
+    "name": "day13-chat"
+  },
+  "labels": {
+    "baseline": {
+      "version": "1",
+      "name": "day13-chat"
+    },
+    "candidate": {
+      "version": "2",
+      "name": "day13-chat"
+    },
+    "production": {
+      "version": "1",
+      "name": "day13-chat"
+    }
+  }
+}

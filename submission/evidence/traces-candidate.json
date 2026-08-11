@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-08-11T09:55:51.151176+00:00",
+  "prompt_label": "candidate",
+  "request_count": 10,
+  "trace_ids": [
+    "83bd3cc86f42ad53c7ae9cdaa157d613",
+    "d2b8ac1a6b8d2de59a0b6ffbb8925c31",
+    "843767798625bb492766d1d49a8abb37",
+    "3fe5ee805f18ee0a0f12ea924daa6e2c",
+    "0c9d128f16cdeea1bf97a47dccf9f12f",
+    "5fb8a9afe79f0f89b9f00fce14a51e30",
+    "4b14eed9f858d75c7d2009d0e6821244",
+    "ac7adaed9b5ba883cf27375ff0fdb187",
+    "9b463c2d1f6a9e5a5f067d6d2b1f6274",
+    "01588ca9409fac47437f9752ba690677"
+  ],
+  "traces": [
+    {
+      "trace_id": "83bd3cc86f42ad53c7ae9cdaa157d613",
+      "session_id": "role-e-candidate",
+      "prompt_name": "day13-chat",
+      "prompt_label": "candidate",
+      "prompt_version": 2
+    },
+    {
+      "trace_id": "d2b8ac1a6b8d2de59a0b6ffbb8925c31",
+      "session_id": "role-e-candidate",
+      "prompt_name": "day13-chat",
+      "prompt_label": "candidate",
+      "prompt_version": 2
+    },
+    {
+      "trace_id": "843767798625bb492766d1d49a8abb37",
+      "session_id": "role-e-candidate",
+      "prompt_name": "day13-chat",
+      "prompt_label": "candidate",
+      "prompt_version": 2
+    },
+    {
+      "trace_id": "3fe5ee805f18ee0a0f12ea924daa6e2c",
+      "session_id": "role-e-candidate",
+      "prompt_name": "day13-chat",
+      "prompt_label": "candidate",
+      "prompt_version": 2
+    },
+    {
+      "trace_id": "0c9d128f16cdeea1bf97a47dccf9f12f",
+      "session_id": "role-e-candidate",
+      "prompt_name": "day13-chat",
+      "prompt_label": "candidate",
+      "prompt_version": 2
+    },
+    {
+      "trace_id": "5fb8a9afe79f0f89b9f00fce14a51e30",
+      "session_id": "role-e-candidate",
+      "prompt_name": "day13-chat",
+      "prompt_label": "candidate",
+      "prompt_version": 2
+    },
+    {
+      "trace_id": "4b14eed9f858d75c7d2009d0e6821244",
+      "session_id": "role-e-candidate",
+      "prompt_name": "day13-chat",
+      "prompt_label": "candidate",
+      "prompt_version": 2
+    },
+    {
+      "trace_id": "ac7adaed9b5ba883cf27375ff0fdb187",
+      "session_id": "role-e-candidate",
+      "prompt_name": "day13-chat",
+      "prompt_label": "candidate",
+      "prompt_version": 2
+    },
+    {
+      "trace_id": "9b463c2d1f6a9e5a5f067d6d2b1f6274",
+      "session_id": "role-e-candidate",
+      "prompt_name": "day13-chat",
+      "prompt_label": "candidate",
+      "prompt_version": 2
+    },
+    {
+      "trace_id": "01588ca9409fac47437f9752ba690677",
+      "session_id": "role-e-candidate",
+      "prompt_name": "day13-chat",
+      "prompt_label": "candidate",
+      "prompt_version": 2
+    }
+  ]
+}

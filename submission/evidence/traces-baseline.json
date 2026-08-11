@@ -1,0 +1,89 @@
+{
+  "generated_at": "2026-08-11T09:55:48.942822+00:00",
+  "prompt_label": "baseline",
+  "request_count": 10,
+  "trace_ids": [
+    "909fb67bf106543270ddd4afc46018b1",
+    "5dee05541c9e24e4867c8f41cf947e5e",
+    "ffbe13d69c9718d622cf1d41d18e013a",
+    "a0ff03d72a02e97e1a01a7dec1574b89",
+    "a3c7e5c89563a230a8bf686a82d0ebbc",
+    "e823bdaabc3a8802e684ef1cc0b5e134",
+    "81b7f3545d00febf98464ac2322ddc2f",
+    "6a1a88b4bb5f3e1694e0b1a6ab58da0f",
+    "5b242c2ceb2f31a0314c97761b769646",
+    "0e157b13f83b5cce302bbf4c33f8d57d"
+  ],
+  "traces": [
+    {
+      "trace_id": "909fb67bf106543270ddd4afc46018b1",
+      "session_id": "role-e-baseline",
+      "prompt_name": "day13-chat",
+      "prompt_label": "baseline",
+      "prompt_version": 1
+    },
+    {
+      "trace_id": "5dee05541c9e24e4867c8f41cf947e5e",
+      "session_id": "role-e-baseline",
+      "prompt_name": "day13-chat",
+      "prompt_label": "baseline",
+      "prompt_version": 1
+    },
+    {
+      "trace_id": "ffbe13d69c9718d622cf1d41d18e013a",
+      "session_id": "role-e-baseline",
+      "prompt_name": "day13-chat",
+      "prompt_label": "baseline",
+      "prompt_version": 1
+    },
+    {
+      "trace_id": "a0ff03d72a02e97e1a01a7dec1574b89",
+      "session_id": "role-e-baseline",
+      "prompt_name": "day13-chat",
+      "prompt_label": "baseline",
+      "prompt_version": 1
+    },
+    {
+      "trace_id": "a3c7e5c89563a230a8bf686a82d0ebbc",
+      "session_id": "role-e-baseline",
+      "prompt_name": "day13-chat",
+      "prompt_label": "baseline",
+      "prompt_version": 1
+    },
+    {
+      "trace_id": "e823bdaabc3a8802e684ef1cc0b5e134",
+      "session_id": "role-e-baseline",
+      "prompt_name": "day13-chat",
+      "prompt_label": "baseline",
+      "prompt_version": 1
+    },
+    {
+      "trace_id": "81b7f3545d00febf98464ac2322ddc2f",
+      "session_id": "role-e-baseline",
+      "prompt_name": "day13-chat",
+      "prompt_label": "baseline",
+      "prompt_version": 1
+    },
+    {
+      "trace_id": "6a1a88b4bb5f3e1694e0b1a6ab58da0f",
+      "session_id": "role-e-baseline",
+      "prompt_name": "day13-chat",
+      "prompt_label": "baseline",
+      "prompt_version": 1
+    },
+    {
+      "trace_id": "5b242c2ceb2f31a0314c97761b769646",
+      "session_id": "role-e-baseline",
+      "prompt_name": "day13-chat",
+      "prompt_label": "baseline",
+      "prompt_version": 1
+    },
+    {
+      "trace_id": "0e157b13f83b5cce302bbf4c33f8d57d",
+      "session_id": "role-e-baseline",
+      "prompt_name": "day13-chat",
+      "prompt_label": "baseline",
+      "prompt_version": 1
+    }
+  ]
+}

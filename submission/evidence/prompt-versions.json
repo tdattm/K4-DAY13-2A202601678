@@ -1,0 +1,12 @@
+{
+  "prompt_name": "day13-chat",
+  "versions": [
+    {"version": 1, "labels": ["baseline", "production"]},
+    {"version": 2, "labels": ["candidate"]}
+  ],
+  "rollback": {
+    "production_before": 2,
+    "production_after": 1
+  },
+  "note": "Metadata was verified from Langfuse API; add UI screenshots if required by the grader."
+}

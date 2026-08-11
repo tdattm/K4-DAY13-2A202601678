@@ -1,0 +1,58 @@
+{
+  "challenge_id": "day13-k4-observability-v1",
+  "incident": "rag_slow",
+  "generated_at": "2026-08-11T09:57:30.369170+00:00",
+  "trace_count": 5,
+  "traces": [
+    {
+      "trace_id": "669f47429b92d176724ce6faf894218d",
+      "session_id": "k4-challenge-s01",
+      "prompt_name": "day13-chat",
+      "prompt_label": "production",
+      "prompt_version": 1
+    },
+    {
+      "trace_id": "f15835f87005ddba2c79bf6a602c2d05",
+      "session_id": "k4-challenge-s02",
+      "prompt_name": "day13-chat",
+      "prompt_label": "production",
+      "prompt_version": 1
+    },
+    {
+      "trace_id": "7f6892a99ef90fd44eff3e3f15c93508",
+      "session_id": "k4-challenge-s03",
+      "prompt_name": "day13-chat",
+      "prompt_label": "production",
+      "prompt_version": 1
+    },
+    {
+      "trace_id": "2d8ebf46c94540fc183cdd6ddcfc5d77",
+      "session_id": "k4-challenge-s04",
+      "prompt_name": "day13-chat",
+      "prompt_label": "production",
+      "prompt_version": 1
+    },
+    {
+      "trace_id": "1cfcfb67fff820266367006a96b6909b",
+      "session_id": "k4-challenge-s05",
+      "prompt_name": "day13-chat",
+      "prompt_label": "production",
+      "prompt_version": 1
+    }
+  ],
+  "root_cause_evidence": "app/mock_rag.py retrieve() sleeps 2.5 seconds when incidents.STATE[rag_slow] is enabled.",
+  "correlation_ids": [
+    "req-6626cca7",
+    "req-8cb25506",
+    "req-1b5f1120",
+    "req-71fd567f",
+    "req-d3349609"
+  ],
+  "observed_response_latency_ms": [
+    2651,
+    2650,
+    2651,
+    2650,
+    2651
+  ]
+}
