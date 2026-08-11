@@ -70,11 +70,11 @@
 
 | Thành viên | Phần việc | Commit/PR | Điều đã học |
 |---|---|---|---|
-| Nguyễn Tiến Đạt (2A202601678) | Correlation ID middleware, context lifecycle, response timing và safe exception responses | `adb1662` | Chưa được thành viên cung cấp; cần Nguyễn Tiến Đạt xác nhận trước khi nộp. |
+| Nguyễn Tiến Đạt (2A202601678) | Correlation ID middleware, context lifecycle, response timing và safe exception responses | `adb1662` | Hiểu cách gán và truyền correlation ID xuyên suốt vòng đời request để nối request, response và lỗi; đồng thời biết trả lỗi an toàn mà vẫn giữ header quan sát phục vụ điều tra. |
 | Lã Phan Hoài An (2A202601846) | PII patterns và recursive structured-log scrubbing | `f8828a6` | Hiểu cách dùng regex nhận diện PII và viết processor đệ quy cho `structlog` để làm sạch JSON lồng nhau mà vẫn giữ metrics. |
-| Kiều Phúc Huy (2A202601056) | `error_rate_pct`, log enrichment và dashboard 6 panel/runtime renderer | `fad79fe`, `0f58f48`, `d0ce8fb` | Chưa được thành viên cung cấp; cần Kiều Phúc Huy xác nhận trước khi nộp. |
+| Kiều Phúc Huy (2A202601056) | `error_rate_pct`, log enrichment và dashboard 6 panel/runtime renderer | `fad79fe`, `0f58f48`, `d0ce8fb` | Hiểu cách biến log runtime thành metric có thể đo lường, đặc biệt là error rate; biết thiết kế dashboard bao phủ latency, traffic, errors, cost, tokens và quality để phát hiện bất thường nhanh. |
 | Nguyễn Nam Phong (2A202601320) | SLO, alert rules, runbook và SRE validator | `5d4419c`, `49a1509`, `a36daf6`, `bfc109e` | Hiểu cách thiết lập SLI/SLO cho latency, reliability, cost, quality và xây alert rules gắn với runbook xử lý sự cố. |
-| Lê Hồ Quang Huy (2A202602026) | Load test, prompt/traces, rollback evidence và điều tra challenge | `2095b06`, `0148867` | Chưa được thành viên cung cấp; cần Lê Hồ Quang Huy xác nhận trước khi nộp. |
+| Lê Hồ Quang Huy (2A202602026) | Load test, prompt/traces, rollback evidence và điều tra challenge | `2095b06`, `0148867` | Hiểu quy trình điều tra sự cố theo Metrics → Traces → Logs; biết xác minh prompt version/rollback trên Langfuse và dùng child span RAG/LLM để khoanh vùng thành phần gây chậm. |
 
 ## 8. Danh sách evidence
 
