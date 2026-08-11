@@ -66,5 +66,5 @@
 | Nguyễn Tiến Đạt (2A202601678) | Correlation ID middleware, context lifecycle, response timing và safe exception responses | `adb1662` | [THÀNH VIÊN BỔ SUNG] |
 | Lã Phan Hoài An (2A202601846) | PII patterns và recursive structured-log scrubbing | `f8828a6` | Hiểu cách dùng Regex để nhận diện dữ liệu nhạy cảm (PII); biết cách viết custom processor cho `structlog` bằng hàm đệ quy để tự động làm sạch PII trong các cấu trúc JSON lồng nhau mà không làm mất các metrics quan trọng. |
 | Kiều Phúc Huy (2A202601056) | `error_rate_pct`, log enrichment và dashboard 6 panel/runtime renderer | `fad79fe`, `0f58f48`, `d0ce8fb` | [THÀNH VIÊN BỔ SUNG] |
-| Nguyễn Nam Phong (2A202601320) | SLO, alert rules, runbook và SRE validator | `5d4419c`, `49a1509`, `a36daf6`, `bfc109e` | [THÀNH VIÊN BỔ SUNG] |
+| Nguyễn Nam Phong (2A202601320) | SLO, alert rules, runbook và SRE validator | `5d4419c`, `49a1509`, `a36daf6`, `bfc109e` | Hiểu cách thiết lập các chỉ số SLOs/SLIs quan trọng (Latency, Reliability, Cost, Quality) cho hệ thống AI. Nắm rõ quy trình xây dựng Alert rules kết hợp với Runbook để xử lý sự cố hiệu quả. |
 | Lê Hồ Quang Huy (2A202602026) | Automation chạy request cho prompt/trace evidence và chuẩn bị điều tra challenge | `2095b06` | [THÀNH VIÊN BỔ SUNG] |
