@@ -1,0 +1,24 @@
+{
+  "trace_id": "ffd7a0b5068630e95dd1b231704a5670",
+  "session_id": "role-e-subcomponents",
+  "incident": "rag_slow",
+  "incident_disabled_after_run": true,
+  "observations": [
+    {
+      "name": "run",
+      "type": "GENERATION",
+      "duration_ms": 3640
+    },
+    {
+      "name": "rag.retrieve",
+      "type": "SPAN",
+      "duration_ms": 2500
+    },
+    {
+      "name": "llm.generate",
+      "type": "SPAN",
+      "duration_ms": 151
+    }
+  ],
+  "verification": "Fetched from the Langfuse trace API after client.flush()."
+}

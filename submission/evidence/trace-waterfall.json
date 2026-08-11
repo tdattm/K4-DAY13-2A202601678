@@ -35,7 +35,7 @@
       "name": "langfuse-sdk",
       "version": "3.2.1",
       "attributes": {
-        "public_key": "pk-lf-9853565e-454b-4c0d-b7ba-b9732ff664ab"
+        "public_key": "[REDACTED_PUBLIC_KEY]"
       }
     }
   },
@@ -80,7 +80,7 @@
           "name": "langfuse-sdk",
           "version": "3.2.1",
           "attributes": {
-            "public_key": "pk-lf-9853565e-454b-4c0d-b7ba-b9732ff664ab"
+            "public_key": "[REDACTED_PUBLIC_KEY]"
           }
         }
       },

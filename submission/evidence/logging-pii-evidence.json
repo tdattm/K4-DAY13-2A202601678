@@ -1,0 +1,48 @@
+{
+  "source": "data/logs.jsonl",
+  "correlation_propagation": {
+    "correlation_id": "req-6626cca7",
+    "request_received": {
+      "event": "request_received",
+      "correlation_id": "req-6626cca7",
+      "user_id_hash": "f00ba60b3772",
+      "session_id": "k4-challenge-s01",
+      "feature": "monitoring",
+      "model": "claude-sonnet-4-5",
+      "env": "dev"
+    },
+    "response_sent": {
+      "event": "response_sent",
+      "correlation_id": "req-6626cca7",
+      "latency_ms": 2651,
+      "user_id_hash": "f00ba60b3772",
+      "session_id": "k4-challenge-s01",
+      "feature": "monitoring",
+      "model": "claude-sonnet-4-5",
+      "env": "dev"
+    }
+  },
+  "pii_redaction_samples": [
+    {
+      "pii_type": "email",
+      "correlation_id": "req-49ec6906",
+      "message_preview": "What is your refund policy? My email is [REDACTED_EMAIL]"
+    },
+    {
+      "pii_type": "phone_vn",
+      "correlation_id": "req-12f2e8ef",
+      "message_preview": "Here is my phone [REDACTED_PHONE_VN], what should be logged?"
+    },
+    {
+      "pii_type": "credit_card",
+      "correlation_id": "req-6f2db3cf",
+      "message_preview": "What is the policy for PII and credit card [REDACTED_CREDIT_CARD]?"
+    }
+  ],
+  "validator_result": {
+    "score": "100/100",
+    "missing_required_fields": 0,
+    "missing_enrichment": 0,
+    "potential_pii_leaks": 0
+  }
+}

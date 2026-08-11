@@ -37,8 +37,12 @@ def test_agent_links_prompt_version_to_trace_and_generation(monkeypatch) -> None
     monkeypatch.setenv("LANGFUSE_PROMPT_LABEL", "production")
     client = RecordingLangfuseClient()
     monkeypatch.setattr(agent_module, "get_langfuse_client", lambda: client)
+    # This unit test supplies dummy credentials to exercise prompt metadata. Bypass
+    # the real sub-component decorators so those credentials are never exported.
+    monkeypatch.setattr(agent_module, "retrieve", agent_module.retrieve.__wrapped__)
 
     agent = agent_module.LabAgent()
+    agent.llm.generate = agent.llm.generate.__wrapped__.__get__(agent.llm, type(agent.llm))
     agent_module.LabAgent.run.__wrapped__(
         agent,
         user_id="student-01",

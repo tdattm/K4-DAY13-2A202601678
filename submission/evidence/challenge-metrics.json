@@ -1,0 +1,18 @@
+{
+  "source": "data/logs.jsonl",
+  "scope": "Five official challenge responses identified by the correlation IDs in challenge-investigation.json",
+  "incident": "rag_slow",
+  "first_response_ts": "2026-08-11T09:56:27.969839Z",
+  "last_response_ts": "2026-08-11T09:56:38.598832Z",
+  "traffic": 5,
+  "latency_p50_ms": 2651,
+  "latency_p95_ms": 2651,
+  "latency_p99_ms": 2651,
+  "avg_cost_usd": 0.002223,
+  "total_cost_usd": 0.011115,
+  "tokens_in_total": 175,
+  "tokens_out_total": 706,
+  "error_rate_pct": 0,
+  "quality_avg": 0.84,
+  "calculation_note": "Values were calculated from the five response_sent records; nearest-rank percentiles match app.metrics.percentile for this sample."
+}
