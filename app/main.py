@@ -24,6 +24,22 @@ app.add_middleware(CorrelationIdMiddleware)
 agent = LabAgent()
 
 
+def _bind_log_context(
+    *,
+    user_id_hash: str | None = None,
+    session_id: str | None = None,
+    feature: str | None = None,
+) -> None:
+    """Bind the stable request fields required by the JSON log contract."""
+    bind_contextvars(
+        user_id_hash=user_id_hash,
+        session_id=session_id,
+        feature=feature,
+        model=agent.model,
+        env=os.getenv("APP_ENV", "dev"),
+    )
+
+
 def _error_response_headers(request: Request) -> dict[str, str]:
     """Preserve request observability headers when FastAPI handles an error."""
     correlation_id = getattr(request.state, "correlation_id", None)
@@ -40,6 +56,7 @@ def _error_response_headers(request: Request) -> dict[str, str]:
 async def request_validation_exception_handler(
     request: Request, exc: RequestValidationError
 ) -> JSONResponse:
+    _bind_log_context()
     record_error(type(exc).__name__)
     log.warning(
         "request_validation_failed",
@@ -85,9 +102,11 @@ async def metrics() -> dict:
 
 @app.post("/chat", response_model=ChatResponse)
 async def chat(request: Request, body: ChatRequest) -> ChatResponse:
-    # TODO: Enrich logs with request context (user_id_hash, session_id, feature, model, env)
-    # bind_contextvars(...)
-    
+    _bind_log_context(
+        user_id_hash=hash_user_id(body.user_id),
+        session_id=body.session_id,
+        feature=body.feature,
+    )
     log.info(
         "request_received",
         service="api",
