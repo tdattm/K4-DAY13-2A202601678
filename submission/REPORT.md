@@ -4,7 +4,7 @@
 
 - Tên nhóm: nhóm Abe
 - Repository URL: https://github.com/tdattm/K4-DAY13-2A202601678.git
-- Commit SHA cuối tại thời điểm cập nhật report: `0e07449` (cần cập nhật lại sau commit report cuối).
+- Commit SHA cuối tại thời điểm cập nhật report: `f04ab35` (cần cập nhật lại sau commit report/evidence cuối).
 - Thành viên và vai trò:
   - Nguyễn Tiến Đạt (2A202601678) — Role A: API & Middleware
   - Lã Phan Hoài An (2A202601846) — Role B: Security Engineer / PII
@@ -15,14 +15,15 @@
 ## 2. Kết quả kỹ thuật
 
 - Điểm `validate_logs.py`: 100/100.
+- CP0 baseline: `submission/evidence/health.jpg`, `submission/evidence/metrics-baseline.jpg`, `submission/evidence/cp0-validate-logs.txt`.
 - Tổng số traces Langfuse: [CHƯA XÁC NHẬN — hai manifest baseline/candidate có tổng 20 request nhưng `trace_ids` còn rỗng].
 - Số PII leak còn lại: 0.
 - Dashboard: `submission/evidence/dashboard.html` và `submission/evidence/dashboard-runtime.png`.
 
 ## 3. Logging và tracing
 
-- Evidence correlation ID: [CHƯA CÓ ảnh/log line riêng trong `submission/evidence/`; log runtime có correlation ID].
-- Evidence PII redaction: [CHƯA CÓ ảnh/log line riêng trong `submission/evidence/`; validator ghi nhận 0 PII leak].
+- Evidence correlation ID: [CHƯA CÓ ảnh/log line riêng; log runtime có correlation ID và CP0 baseline đã lưu].
+- Evidence PII redaction: [CHƯA CÓ ảnh/log line riêng; validator ghi nhận 0 PII leak].
 - Evidence trace waterfall: [CHƯA CÓ — cần chụp từ Langfuse].
 - Giải thích một span đáng chú ý: [CHƯA ĐIỀU TRA challenge].
 
